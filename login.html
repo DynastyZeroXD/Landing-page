@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Operación M.P.R.</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #00aced;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        /* Barra de navegación */
+        .navbar {
+            background-color: #003366;
+            color: #ffffff;
+            padding: 15px 30px;
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .navbar .logo-btn {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .navbar .logo-btn img {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s;
+        }
+        .navbar .logo-btn:hover img {
+            transform: scale(1.1);
+        }
+        .navbar h1 {
+            font-size: 24px;
+            margin: 0;
+            padding-left: 10px;
+        }
+        .login-btn {
+            background-color: #00aced;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .login-btn:hover {
+            background-color: #0084b4;
+        }
+        /* Inicio sesión*/
+        .form-container {
+            background-color: #ffffff;
+            padding: 60px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+            color: #003366;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submit-btn {
+            width: 110%;
+            padding: 10px;
+            background-color: #003366;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #0084b4;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegación con el logo como botón de pantalla principal -->
+    <div class="navbar">
+        <a href="index.html" class="logo-btn">
+            <img src="https://raw.githubusercontent.com/DynastyZeroXD/reynaldo.github.io/af0960146273405ea28eb43e023199a344fb0e54/imagen.jpeg" alt="Logo de Operación M.P.R.">
+            <h1>Operación M.P.R.</h1>
+        </a>
+        <button class="login-btn" onclick="window.location.href='login.html';">Iniciar Sesión</button>
+    </div>
+    
+    <div class="form-container">
+        <h2>Iniciar Sesión</h2>
+        <form id="loginForm">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required pattern="[A-Za-záéíóúÁÉÍÓÚÑñ\s]+" title="Solo se permiten letras y espacios." oninput="this.value = this.value.replace(/[^A-Za-záéíóúÁÉÍÓÚÑñ\s]/g, '');">
+
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad" required min="0" max="99" title="Ingrese solo 2 dígitos (0-99)" oninput="this.value = this.value.slice(0, 2)">
+
+            <label for="telefono">Número de Teléfono:</label>
+            <input type="text" id="telefono" name="telefono" required placeholder="Ej: 1234-5678" title="Formato: 1234-5678" maxlength="9" pattern="^\d{4}-\d{4}$" oninput="this.value = this.value.replace(/[^0-9-]/g, '');">
+
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" required pattern="^[a-zA-ZáéíóúÁÉÍÓÚÑñ]+@[a-zA-ZáéíóúÁÉÍÓÚÑñ]+\.[a-zA-Z]{2,}$" title="El correo debe contener solo letras." oninput="this.value = this.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚÑñ@.]/g, '');">
+
+            <button type="submit" class="submit-btn">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        // Validación del formulario
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            // Validar nombre (solo letras)
+            const nombre = document.getElementById("nombre").value;
+            const nombrePattern = /^[A-Za-záéíóúÁÉÍÓÚÑñ\s]+$/;
+            if (!nombrePattern.test(nombre)) {
+                event.preventDefault(); // Previene el envío del formulario
+                return;
+            }
+
+            // Validar edad (solo 2 dígitos)
+            const edad = document.getElementById("edad").value;
+            if (edad < 0 || edad > 99) {
+                alert("La edad debe ser un número entre 0 y 99.");
+                event.preventDefault();
+                return;
+            }
+
+            // Validar número de teléfono (formato 1234-5678)
+            const telefono = document.getElementById("telefono").value;
+            const telefonoPattern = /^\d{4}-\d{4}$/;
+            if (!telefonoPattern.test(telefono)) {
+                alert("El número de teléfono debe estar en el formato 1234-5678 y contener 8 dígitos.");
+                event.preventDefault();
+                return;
+            }
+
+            // Validar correo electrónico (solo letras)
+            const correo = document.getElementById("correo").value;
+            const correoPattern = /^[a-zA-ZáéíóúÁÉÍÓÚÑñ]+@[a-zA-ZáéíóúÁÉÍÓÚÑñ]+\.[a-zA-Z]{2,}$/;
+            if (!correoPattern.test(correo)) {
+                event.preventDefault();
+                return;
+            }
+        });
+    </script>
+
+</body>
+</html>

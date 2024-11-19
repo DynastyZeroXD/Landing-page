@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operación M.P.R. - Mantenimiento de Piezas Robóticas</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #00aced;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        /* Barra de navegación */
+        .navbar {
+            background-color: #003366;
+            color: #ffffff;
+            padding: 15px 30px;
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .navbar .logo-btn {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .navbar .logo-btn img {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s;
+        }
+        .navbar .logo-btn:hover img {
+            transform: scale(1.1);
+        }
+        .navbar h1 {
+            font-size: 24px;
+            margin: 0;
+            padding-left: 10px;
+        }
+        .login-btn {
+            background-color: #00aced;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .login-btn:hover {
+            background-color: #0084b4;
+        }
+        /* Sección principal */
+        .content-wrapper {
+            max-width: 800px;
+            margin: 30px 20px;
+            padding: 20px;
+            text-align: justify;
+        }
+        section {
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            color: #003366;
+            line-height: 1.6;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        /* Fondos de cada sección */
+        .quienes-somos {
+            background-color: #e6f3ff;
+        }
+        .objetivos{
+            background-color: #d9e9f5;
+        }
+        footer {
+            background-color: #003366;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px;
+            width: 100%;
+            max-width: 1200px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+        .contacto {
+            color: #00aced;
+            font-weight: bold;
+            margin: 10px 0; /* Espaciado entre los párrafos */
+        }
+        .separation {
+            height: 50px; /* Ajusta la altura según lo necesario */
+            background-color: transparent;
+            margin: 20px 0; /* Asegura un espaciado fluido */
+        }
+
+        /* Ofertas de trabajo */
+        .job-section {
+            padding: 40px 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: s auto;
+            max-width: 800px;
+        }
+        .job-section h2 {
+            color: #003366;
+            margin-bottom: 20px;
+        }
+        .job-card {
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .job-card h3 {
+            margin: 0;
+            color: #003366;
+        }
+        .job-card p {
+            margin: 5px 0;
+            color: #333;
+        }
+        .job-card button {
+            background-color: #00aced;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .job-card button:hover {
+            background-color: #0084b4;
+        }
+        /* Estilos del icono de Instagram y Gmail */
+        .social-icons {
+            display: flex;
+            justify-content: center; /* Centrar los iconos */
+            align-items: center; /* Centrar verticalmente */
+            margin-top: 10px; /* Espaciado arriba de los iconos */
+        }
+        .gmail-icon, .instagram-icon {
+            width: 24px;
+            height: 24px;
+            margin: 0 10px; /* Espaciado entre iconos */
+            vertical-align: middle;
+        }
+        .logo-img {
+            display: block;
+            margin: 20px auto; /* Centra la imagen y añade margen */
+            max-width: 100%; /* Asegura que la imagen no se desborde */
+            height: auto; /* Mantiene la proporción de la imagen */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegación con el logo como botón de pantalla principal -->
+    <div class="navbar">
+        <a href="index.html" class="logo-btn">
+            <img src="https://raw.githubusercontent.com/DynastyZeroXD/reynaldo.github.io/af0960146273405ea28eb43e023199a344fb0e54/imagen.jpeg" alt="Logo de Operación M.P.R.">
+            <h1>Operación M.P.R.</h1>
+        </a>
+        <button class="login-btn" onclick="window.location.href='login.html';">Iniciar Sesión</button>
+    </div>
+
+    <!-- Contenedor principal para centrar el contenido -->
+    <div class="content-wrapper">
+        
+        <!-- Logo de la empresa -->
+        <img src="https://raw.githubusercontent.com/DynastyZeroXD/reynaldo.github.io/6e750d1b51502b321811c6b04bf4589cc3d55b69/Logo%20de%20Photoshop.jpg" alt="Logo de la empresa" class="logo-img">
+
+        <section class="quienes-somos">
+            <h2>¿Quiénes Somos?</h2>
+            <p>Operación M.P.R. es una empresa metalúrgica, creada en 2023 por Reynaldo Murgas, dedicada al diseño, creación y mantenimiento de piezas para robots y otros dispositivos electrónicos como computadoras, celulares, refrigeradores, y más. Nuestro compromiso es desarrollar piezas de alta calidad, adaptables a distintas arquitecturas y funcionalidades, garantizando durabilidad y precisión.</p>
+        </section>
+    <div class="separation"></div>
+    <!-- Sección de ofertas de trabajo -->
+    <div class="job-section">
+        <h2>Nuestras Ofertas de Trabajo</h2>
+
+        <!-- Tarjeta de oferta de trabajo -->
+        <div class="job-card">
+            <div>
+                <h3>Desarrollador Web</h3>
+                <p>Ubicación: Remoto</p>
+                <p>Salario: $1,500 - $2,000 USD/mes</p>
+            </div>
+            <button onclick="window.location.href='job-detail.html';">Ver Más</button>
+        </div>
+
+        <div class="job-card">
+            <div>
+                <h3>Analista de Datos</h3>
+                <p>Ubicación: Ciudad de México</p>
+                <p>Salario: $2,000 - $2,500 USD/mes</p>
+            </div>
+            <button onclick="window.location.href='job-detail.html';">Ver Más</button>
+        </div>
+
+        <div class="job-card">
+            <div>
+                <h3>Ingeniero en Software</h3>
+                <p>Ubicación: San Francisco, CA</p>
+                <p>Salario: $3,000 - $4,000 USD/mes</p>
+            </div>
+            <button onclick="window.location.href='job-detail.html';">Ver Más</button>
+        </div>
+    </div>
+    <div class="separation"></div>
+    <section class="objetivos">
+            <h2>Nuestro Objetivo</h2>
+            <p>Nos enfocamos en ofrecer piezas robustas y bien diseñadas, que cumplan con los más altos estándares de calidad para satisfacer las necesidades de nuestros clientes en cualquier momento. Nuestro propósito es expandir nuestra distribución y reconocimiento internacional en el sector de la robótica y la tecnología avanzada.</p>
+        </section>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>¿Por qué elegirnos? Operación M.P.R. garantiza piezas revisadas bajo estrictos estándares de calidad y adaptadas a cada necesidad específica. Nos esforzamos en convertirnos en aliados clave de la innovación en robótica y tecnología.</p>
+        <p class="contacto">¡Contáctanos hoy mismo y conoce cómo podemos potenciar tus proyectos de robótica!</p>
+        <div class="social-icons">
+            <a href="mailto:reymurgas01@gmail.com">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/1280px-Gmail_icon_%282020%29.svg.png" alt="Gmail" class="gmail-icon">
+            </a>
+            <a href="https://www.instagram.com/operacionmpr/profilecard/?igsh=dmltaDBwMHBwcm90" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="instagram-icon">
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
